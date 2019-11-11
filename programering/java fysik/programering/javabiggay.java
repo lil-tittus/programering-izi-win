@@ -7,6 +7,7 @@ public class javabiggay {
 	public static void main(String[] args) {
 		
 		System.out.println(fahrenheitToCelsius(50.0));
+		System.out.println(kelvinToCelcius(0.0));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -15,7 +16,10 @@ public class javabiggay {
 		return celcius;
 	
 	}
-	
-	
+	//Metod för kelvin till celcius
+	public static double kelvinToCelcius (double kelvin) {
+		double celcius = (kelvin-273.15);
+		return celcius;
+	}
 }
 	
