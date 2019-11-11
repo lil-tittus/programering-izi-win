@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="v.39"/>
 	<classpathentry kind="src" path="lektionsuppgifter"/>
+	<classpathentry kind="src" path="java fysik"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
