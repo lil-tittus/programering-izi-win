@@ -1,4 +1,4 @@
-package programering;
+package enums;
 
 import java.util.Scanner;
 
@@ -8,6 +8,7 @@ public class javabiggay {
 		
 		System.out.println(fahrenheitToCelsius(50.0));
 		System.out.println(kelvinToCelcius(0.0));
+		System.out.println(fluidPressure(FluidTable.WATER, 10));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -20,6 +21,12 @@ public class javabiggay {
 	public static double kelvinToCelcius (double kelvin) {
 		double celcius = (kelvin-273.15);
 		return celcius;
+	}
+	
+	public static double fluidPressure(FluidTable fluid, double deep) {
+		
+		double pressure = (fluid.density * 9.82 * deep);
+		return pressure;
 	}
 }
 	
