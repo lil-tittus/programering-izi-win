@@ -11,6 +11,7 @@ public class javabiggay {
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
 		System.out.println(pressureUnderWater(10));
 		System.out.println(kineticEnergy(2,2));
+		System.out.println(potentialEnergy(2,5));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -42,6 +43,11 @@ public class javabiggay {
 		
 		double kineticEnergy = mass * Math.pow(velocity, 2) / 2;
 		return kineticEnergy;
+	}
+	
+	public static double potentialEnergy(double mass, double height) {
+		
+		return mass * 9.82 * height;
 	}
 }
 	
