@@ -9,6 +9,7 @@ public class javabiggay {
 		System.out.println(fahrenheitToCelsius(50.0));
 		System.out.println(kelvinToCelcius(0.0));
 		System.out.println(fluidPressure(FluidTable.WATER, 10));
+		System.out.println(pressureUnderWater(10));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -27,6 +28,13 @@ public class javabiggay {
 		
 		double pressure = (fluid.density * 9.82 * deep);
 		return pressure;
+	}
+	
+	public static double pressureUnderWater(double deep) {
+	
+		double pressureWater = FluidTable.WATER.density * 9.82 * deep;
+		return pressureWater
+	
 	}
 }
 	
