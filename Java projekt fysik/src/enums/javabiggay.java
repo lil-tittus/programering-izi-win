@@ -20,6 +20,8 @@ public class javabiggay {
 		System.out.println(volumeToMass(GasTable.AIR,1));
 		System.out.println(volumeToMass(SolidTable.IRON,1));
 		System.out.println(svtVelocity(10,5));
+		System.out.println(svtDistance(10,5));
+		System.out.println(svtTime(10,2));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -87,6 +89,16 @@ public class javabiggay {
 	public static double svtVelocity(double distance, double time) {
 		
 		return distance/time;
+	}
+	
+	public static double svtDistance(double velocity, double time) {
+		
+		return velocity * time;
+	}
+	
+	public static double svtTime(double distance, double velocity) {
+		
+		return distance/velocity;
 	}
 }
 	
