@@ -17,6 +17,8 @@ public class javabiggay {
 		System.out.println(delta(1,10));
 		System.out.println(delta(5,1));
 		System.out.println(volumeToMass(FluidTable.WATER,1));
+		System.out.println(volumeToMass(GasTable.AIR,1));
+		System.out.println(volumeToMass(SolidTable.IRON,1));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -69,6 +71,16 @@ public class javabiggay {
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		
 		return fluid.density * volume; 
+	}
+	
+	public static double volumeToMass(GasTable gas, double volume) {
+		
+		return gas.density * volume;
+	}
+	
+	public static double volumeToMass(SolidTable solid, double volume) {
+		
+		return solid.density * volume; 
 	}
 }
 	
