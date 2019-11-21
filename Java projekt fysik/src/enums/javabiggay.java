@@ -3,7 +3,8 @@ package enums;
 import java.util.Scanner;
 
 public class javabiggay {
-
+	
+	static double g = 9.82;
 	public static void main(String[] args) {
 		
 		System.out.println(fahrenheitToCelsius(50.0));
@@ -13,6 +14,9 @@ public class javabiggay {
 		System.out.println(kineticEnergy(2,2));
 		System.out.println(potentialEnergy(2,5));
 		System.out.println(fallSpeed(2.5));
+		System.out.println(delta(1,10));
+		System.out.println(delta(5,1));
+		System.out.println(volumeToMass(FluidTable.WATER,1));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -29,13 +33,13 @@ public class javabiggay {
 	
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		
-		double pressure = (fluid.density * 9.82 * deep);
+		double pressure = (fluid.density * g * deep);
 		return pressure;
 	}
 	
 	public static double pressureUnderWater(double deep) {
 	
-		double pressureWater = FluidTable.WATER.density * 9.82 * deep;
+		double pressureWater = FluidTable.WATER.density * g * deep;
 		return pressureWater;
 	
 	}
@@ -48,13 +52,23 @@ public class javabiggay {
 	
 	public static double potentialEnergy(double mass, double height) {
 		
-		return mass * 9.82 * height;
+		return mass * g * height;
 	}
 
 	
 	public static double fallSpeed(double height) {
 		
-		return Math.sqrt(2 * 9.82 * height);
+		return Math.sqrt(2 * g * height);
+	}
+	
+	public static double delta(double first, double last) {
+		
+		return last - first;
+	}
+	
+	public static double volumeToMass(FluidTable fluid, double volume) {
+		
+		return fluid.density * volume; 
 	}
 }
 	
