@@ -98,32 +98,66 @@ public class javabiggay {
 		return mass * g * height;
 	}
 
-	
+	/**
+	 * Beräknar hur hög hastighet när man faller ett föremål
+	 * @param height Den spisifika höjden
+	 * @return Hastigheten
+	 */
 	public static double fallSpeed(double height) {
 		
 		return Math.sqrt(2 * g * height);
 	}
 	
+	/**
+	 * Beräknar skillnaden mellan två värden
+	 * @param first Första värdet
+	 * @param last Andra värdet
+	 * @return Skillnaden
+	 */
 	public static double delta(double first, double last) {
 		
 		return last - first;
 	}
 	
+	/**
+	 * Förvanlar en vätska med en viss volym till massa
+	 * @param fluid Den spisifika vätskan
+	 * @param volume Det spisifika värdet på volymen
+	 * @return Värdet på massan
+	 */
 	public static double volumeToMass(FluidTable fluid, double volume) {
 		
 		return fluid.density * volume; 
 	}
 	
+	/**
+	 * Gör om en viss volym av gas till en massa
+	 * @param gas Den spisifika gasen
+	 * @param volume Det spisifika värdet på volymen
+	 * @return Värdet på massan
+	 */
 	public static double volumeToMass(GasTable gas, double volume) {
 		
 		return gas.density * volume;
 	}
 	
+	/**
+	 * Gör om en viss volym av materia till en massa
+	 * @param solid Den spisifika materian
+	 * @param volume Det spisifika värdet på volymen
+	 * @return Värdet på massan
+	 */
 	public static double volumeToMass(SolidTable solid, double volume) {
 		
 		return solid.density * volume; 
 	}
 	
+	/**
+	 * Beräknar ut medelhastigheten med hjälp av sträcka och tid
+	 * @param distance Den spisifika sträckan
+	 * @param time Den spisifika tiden
+	 * @return Medelhastigheten
+	 */
 	public static double svtVelocity(double distance, double time) {
 		
 		return distance/time;
