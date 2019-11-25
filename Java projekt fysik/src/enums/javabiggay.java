@@ -24,6 +24,7 @@ public class javabiggay {
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
+		System.out.println(heat(SolidTable.IRON,1,2));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -111,6 +112,11 @@ public class javabiggay {
 	public static double power(double work, double time) {
 		
 		return work/time;
+	}
+	
+	public static double heat(SolidTable solid, double mass, double deltaT) {
+		
+		return solid.heatCapacity * mass * deltaT;
 	}
 }
 	
