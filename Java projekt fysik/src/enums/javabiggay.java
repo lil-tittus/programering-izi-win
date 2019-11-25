@@ -30,24 +30,44 @@ public class javabiggay {
 		System.out.println(velocityToHeight(9.82));
 	}
 	
-	//Metod för fahrenheit till celcius
+	/**
+	 * Omvandlar från fahrenheit till celsius
+	 * @param fahrenheit Värdet för temperatur, i fahrenheit
+	 * @return Temperatur i celcuis
+	 */
 	public static double fahrenheitToCelsius (double fahrenheit) {
 		double celcius = ((fahrenheit-32)*5)/9;
 		return celcius;
 	
 	}
-	//Metod för kelvin till celcius
+
+	/**
+	 * Omvandlar från kelvin till celcuis
+	 * @param kelvin Värdet för temperatur, i kelvin
+	 * @return Temperatur i celcius
+	 */
 	public static double kelvinToCelcius (double kelvin) {
 		double celcius = (kelvin-273.15);
 		return celcius;
 	}
 	
+	/**
+	 * Trycket i en viss vätska
+	 * @param fluid Den spesifika vätskan
+	 * @param deep Hur djupt ner
+	 * @return Trycket
+	 */
 	public static double fluidPressure(FluidTable fluid, double deep) {
 		
 		double pressure = (fluid.density * g * deep);
 		return pressure;
 	}
 	
+	/**
+	 * Beräknar trycket i vatten
+	 * @param deep Hur djupt ner i vatten
+	 * @return Trycket i vatten
+	 */
 	public static double pressureUnderWater(double deep) {
 	
 		double pressureWater = FluidTable.WATER.density * g * deep;
@@ -55,12 +75,24 @@ public class javabiggay {
 	
 	}
 	
+	/**
+	 * Beräknar den kenetiska energin
+	 * @param mass Den spisifika massan
+	 * @param velocity Dan spisifika hastigheten
+	 * @return den kenetiska energin
+	 */
 	public static double kineticEnergy(double mass, double velocity) {
 		
 		double kineticEnergy = mass * Math.pow(velocity, 2) / 2;
 		return kineticEnergy;
 	}
 	
+	/**
+	 * Beräknar den potentiella energin
+	 * @param mass Den spisifika massan
+	 * @param height Den spsifika höjden
+	 * @return Den potentiella energin
+	 */
 	public static double potentialEnergy(double mass, double height) {
 		
 		return mass * g * height;
