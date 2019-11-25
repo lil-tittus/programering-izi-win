@@ -24,8 +24,9 @@ public class javabiggay {
 		System.out.println(svtTime(10,2));
 		System.out.println(work(50,10));
 		System.out.println(power(1000,2));
-		System.out.println(heat(SolidTable.IRON,1,2));
-		System.out.println(heat(FluidTable.WATER,1,10));
+		System.out.println(heatSolid(SolidTable.IRON,1,2));
+		System.out.println(heatFluid(FluidTable.WATER,1,10));
+		System.out.println(heatGas(GasTable.AIR,1,1));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -120,9 +121,13 @@ public class javabiggay {
 		return solid.heatCapacity * mass * deltaT;
 	}
 	
-public static double heatFluid(FluidTable fluid, double mass, double deltaT) {
+	public static double heatFluid(FluidTable fluid, double mass, double deltaT) {
 		
 		return fluid.heatCapacity * mass * deltaT;
-}
+	}
 	
+	public static double heatGas(GasTable gas, double mass, double deltaT) {
+		
+		return gas.heatCapacity * mass * deltaT;
+	}
 }
