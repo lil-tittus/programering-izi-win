@@ -22,6 +22,7 @@ public class javabiggay {
 		System.out.println(svtVelocity(10,5));
 		System.out.println(svtDistance(10,5));
 		System.out.println(svtTime(10,2));
+		System.out.println(work(50,10));
 	}
 	
 	//Metod för fahrenheit till celcius
@@ -99,6 +100,11 @@ public class javabiggay {
 	public static double svtTime(double distance, double velocity) {
 		
 		return distance/velocity;
+	}
+	
+	public static double work(double force, double distance) {
+		
+		return force * distance;
 	}
 }
 	
