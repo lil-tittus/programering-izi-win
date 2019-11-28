@@ -210,29 +210,52 @@ public class javabiggay {
 	 * Calculate how much energy it takes to heat a certain material a given amount of degrees.
 	 * @param solid The specific material
 	 * @param mass The specific amount of kg
-	 * @param deltaT 
-	 * @return 
+	 * @param deltaT Data for the difference in temperature
+	 * @return The energy it takes to heat the material
 	 */
 	public static double heatSolid(SolidTable solid, double mass, double deltaT) {
 		
 		return solid.heatCapacity * mass * deltaT;
 	}
 	
+	/**
+	 * Calculate how much energy it takes to heat a certain fluid a given amount of degrees
+	 * @param fluid The specific fluid you want to heat
+	 * @param mass The specific mass of the fluid in kg
+	 * @param deltaT Data for the difference in temperature
+	 * @return The energy it takes to heat the fluid
+	 */
 	public static double heatFluid(FluidTable fluid, double mass, double deltaT) {
 		
 		return fluid.heatCapacity * mass * deltaT;
 	}
 	
+	/**
+	 * Calculate how much energy it takes to heat a certain gas a given amount of degrees
+	 * @param gas The specific gas
+	 * @param mass The specific mass of the gas in kg
+	 * @param deltaT Data for the difference in temperature
+	 * @returnThe energy it takes to heat the gas
+	 */
 	public static double heatGas(GasTable gas, double mass, double deltaT) {
 		
 		return gas.heatCapacity * mass * deltaT;
 	}
-	
+	 /**
+	  * Calculates the height an object with a certain velocity can achieve
+	  * @param velocity The specific velocity 
+	  * @return The height the object will achieve
+	  */
 	public static double velocityToHeight(double velocity) {
 		
 		return Math.pow(velocity, 2)/ (2*g);
 	}
 	
+	/**
+	 * Calculates the force with help of the mass and the gravity
+	 * @param mass The specific mass in kg
+	 * @return The force in N
+	 */
 	public static double Force (double mass) {
 		
 		return mass*g;
