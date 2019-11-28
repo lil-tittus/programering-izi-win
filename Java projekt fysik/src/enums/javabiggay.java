@@ -207,11 +207,11 @@ public class javabiggay {
 	}
 	
 	/**
-	 * 
-	 * @param solid
-	 * @param mass
-	 * @param deltaT
-	 * @return
+	 * Calculate how much energy it takes to heat a certain material a given amount of degrees.
+	 * @param solid The specific material
+	 * @param mass The specific amount of kg
+	 * @param deltaT 
+	 * @return 
 	 */
 	public static double heatSolid(SolidTable solid, double mass, double deltaT) {
 		
