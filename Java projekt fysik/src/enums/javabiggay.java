@@ -5,29 +5,28 @@ import java.util.Scanner;
 public class javabiggay {
 	
 	static double g = 9.82;
+	static double R = 8.3144621;
+	static double G = 6.67408*Math.pow(10, -11);
+	static double p_0 = 1000;
+	static double c = 299792458;
+
 	public static void main(String[] args) {
 		
-		System.out.println(fahrenheitToCelsius(50.0));
-		System.out.println(kelvinToCelcius(0.0));
-		System.out.println(fluidPressure(FluidTable.WATER, 10));
-		System.out.println(pressureUnderWater(10));
-		System.out.println(kineticEnergy(2,2));
-		System.out.println(potentialEnergy(2,5));
-		System.out.println(fallSpeed(2.5));
-		System.out.println(delta(1,10));
-		System.out.println(delta(5,1));
-		System.out.println(volumeToMass(FluidTable.WATER,1));
-		System.out.println(volumeToMass(GasTable.AIR,1));
-		System.out.println(volumeToMass(SolidTable.IRON,1));
-		System.out.println(svtVelocity(10,5));
-		System.out.println(svtDistance(10,5));
-		System.out.println(svtTime(10,2));
-		System.out.println(work(50,10));
-		System.out.println(power(1000,2));
-		System.out.println(heatSolid(SolidTable.IRON,1,2));
-		System.out.println(heatFluid(FluidTable.WATER,1,10));
-		System.out.println(heatGas(GasTable.AIR,1,1));
-		System.out.println(velocityToHeight(9.82));
+		System.out.println(volumeToMass(SolidTable.IRON, 0.06));
+
+		System.out.println(svtDistance(2.7, 3000));
+
+		System.out.println(heatFluid(FluidTable.WATER, 4, FluidTable.WATER.boilPoint));
+
+		System.out.println(pressureUnderWater(75));
+
+		System.out.println(velocityToHeight(16.667));
+		
+		System.out.println(power (work(Force(735),(100 / 3.6 * 4.8)),4.8));
+		
+	
+		
+		
 	}
 	
 	/**
@@ -163,26 +162,57 @@ public class javabiggay {
 		return distance/time;
 	}
 	
+	/**
+	 * Beräknar ut sträcka med hjälp av hastighet och tid
+	 * @param velocity Den spisifika hastigheten
+	 * @param time Den spisifika tiden
+	 * @return Längden på sträckan
+	 */
 	public static double svtDistance(double velocity, double time) {
 		
 		return velocity * time;
 	}
 	
+	/**
+	 * Beräknar ut tid för hjälp av sträcka och hastighet
+	 * @param distance Den spisifika längden på sträckan i m
+	 * @param velocity Den spisifika hastigheten i m/s
+	 * @return Den spisifika tiden
+	 */
 	public static double svtTime(double distance, double velocity) {
 		
 		return distance/velocity;
 	}
 	
+	/**
+	 * Calculates the work with the help of force and distance
+	 * @param force The specific value of force in N
+	 * @param distance The specific value of distance in M
+	 * @return The value of work in Nm
+	 */
 	public static double work(double force, double distance) {
 		
 		return force * distance;
 	}
 	
+	/**
+	 * Calculates the efficiency with the help of work and time
+	 * @param work The specific value of work in Nm
+	 * @param time The specific time in s
+	 * @return The value of efficiency in Nm/s
+	 */
 	public static double power(double work, double time) {
 		
 		return work/time;
 	}
 	
+	/**
+	 * 
+	 * @param solid
+	 * @param mass
+	 * @param deltaT
+	 * @return
+	 */
 	public static double heatSolid(SolidTable solid, double mass, double deltaT) {
 		
 		return solid.heatCapacity * mass * deltaT;
@@ -202,4 +232,10 @@ public class javabiggay {
 		
 		return Math.pow(velocity, 2)/ (2*g);
 	}
+	
+	public static double Force (double mass) {
+		
+		return mass*g;
+	}
+	
 }
