@@ -24,6 +24,17 @@ public class javabiggay {
 		
 		System.out.println(power (work(Force(735),(100 / 3.6 * 4.8)),4.8));
 		
+		//How much is 100 fahrenheit in Celsius?
+		System.out.println(fahrenheitToCelsius(100) + "C");
+		
+		//Whats the kinetic energy at an object with the mass 50g and velocity 10 m/s?
+		System.out.println(kineticEnergy(50.0, 10.0) + "J");
+		
+		//How long time has a car traveled with the distance 20m and velocity 5m/s?
+		System.out.println(svtTime(20.0,5.0));
+		
+		
+		
 	
 		
 		
