@@ -24,6 +24,8 @@ public class javabiggay {
 		
 		System.out.println(power (work(Force(735),(100 / 3.6 * 4.8)),4.8));
 		
+		System.out.println(fråga7(1, 12 ,0.5));
+		
 		//How much is 100 fahrenheit in Celsius?
 		System.out.println(fahrenheitToCelsius(100) + "C");
 		
@@ -271,5 +273,30 @@ public class javabiggay {
 		
 		return mass*g;
 	}
+	
+	/**
+	 * Calculates question 7
+	 * @param mass The specific mass for the bouncy ball
+	 * @param h The height the ball drops from
+	 * @param mH The lowest height
+	 * @return The amount of times it bounces 
+	 */
+	public static int fråga7 (double mass, double h,double mH){
+		int studs = 0;
+
+
+
+		while ( h > mH) {
+
+		double E = mass* g*h;
+		E = E * 0.99;
+		h = E/(mass * g);
+		studs++;
+
+		}
+		return studs;
+		}
+
+
 	
 }
