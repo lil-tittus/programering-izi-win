@@ -108,13 +108,26 @@ public class Tal {
 	
 	public static void Choosedifficultyhard() {
 		if(Choosedifficulty == 3) {
-		if(Playerguess < Rightanswarhard) {
-			System.out.println("Number is lower");
-			System.out.println("Remaining guesses");
-		}
-		else if(Playerguess > Rightanswarhard) {
-			System.out.println("Number is higher");
-			System.out.println("Remaining guesses");
+			int Rightanswarhard = rand.nextInt(100)+1;
+			while(Playerguess != Rightanswarhard) {
+				guesses++;
+				if(guesses == 10) break;
+				System.out.println("Please enter a number");
+			
+			int Playerguess = input.nextInt();
+			if(Playerguess < Rightanswarhard) {
+				System.out.println("Number is higher");
+				System.out.println("You have guessed:" + guesses + "times");
+			}
+			else if(Playerguess > Rightanswarhard) {
+				System.out.println("Number is lower");
+				System.out.println("You have guessed:" + guesses + "times");
+			}
+			else if(Playerguess == Rightanswarhard){
+				System.out.println("You got it my comrade!!");
+				break;
+				
+			}
 		}
 		
 		}
