@@ -10,7 +10,7 @@ public class Tal {
 	static int Rightanswarmedium;
 	static int Rightanswarhard;
 	static Scanner input = new Scanner (System.in);
-	
+	static int guesses;
 	
 	public static void main(String[] args) {
 		System.out.println("Shalom my comrade, welcome to my epic game!");
@@ -23,12 +23,14 @@ public class Tal {
 	
 	public static void Choosedifficulty () {
 		System.out.println("Difficultys :  \b 1(easy) \b 2(medium) \b 3(hard)");
+		System.out.println("Please enter a difficulty");
 		while (Choosedifficulty < 1 || Choosedifficulty > 4) {
             Choosedifficulty = input.nextInt();
           }
           switch (Choosedifficulty) {
             case 1: Choosedifficultyeasy();
             case 2: Choosedifficultymeadium();
+            case 3: Choosedifficultyhard();
             
           }
 			
@@ -81,14 +83,25 @@ public class Tal {
 	
 	public static void Choosedifficultymeadium() {
 		if(Choosedifficulty == 2) {
-		if(Playerguess < Rightanswarmedium) {
-			System.out.println("Number is lower");
-		}
-		else if(Playerguess > Rightanswarmedium) {
-			System.out.println("Number is higher");
-		}
-		else if(Playerguess == Rightanswarmedium) {
-			System.out.println("You got it my comrade!!");
+			int Rightanswarmedium = rand.nextInt(100)+1;
+			while(Playerguess != Rightanswarmedium) {
+				guesses++;
+				if(guesses == 20) break;
+				System.out.println("Please enter a number");
+			
+			int Playerguess = input.nextInt();
+			if(Playerguess < Rightanswarmedium) {
+				System.out.println("Number is higher");
+				System.out.println("You have guessed:" + guesses + "times");
+			}
+			else if(Playerguess > Rightanswarmedium) {
+				System.out.println("Number is lower");
+				System.out.println("You have guessed:" + guesses + "times");
+			}
+			else if(Playerguess == Rightanswarmedium){
+				System.out.println("You got it my comrade!!");
+				break;
+			}
 		}
 		}
 	}
