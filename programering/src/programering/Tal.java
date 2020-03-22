@@ -25,7 +25,7 @@ public class Tal {
 		while (true){
 			System.out.println("Choose a difficulty from 1-3");
 			int Choosedifficulty = input.nextInt();
-			if (Choosedifficulty  == 1 || Choosedifficulty  == 2 || Choosedifficulty  == 3) {
+			if ( Choosedifficulty == 1 || Choosedifficulty  == 2 || Choosedifficulty  == 3) {
 				break;
 			
 	}
@@ -46,6 +46,20 @@ public class Tal {
 		else if(Playerguess == Rightanswareasy){
 			System.out.println("You got it my comrade!!");
 			
+		}
+		}
+	}
+	
+	public static void Choosedifficultymeadium() {
+		if(Choosedifficulty == 2) {
+		if(Playerguess < Rightanswarmedium) {
+			System.out.println("Number is lower");
+		}
+		else if(Playerguess > Rightanswarmedium) {
+			System.out.println("Number is higher");
+		}
+		else if(Playerguess == Rightanswarmedium) {
+			System.out.println("You got it my comrade!!");
 		}
 		}
 	}
