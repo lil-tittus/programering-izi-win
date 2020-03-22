@@ -10,7 +10,7 @@ public class Tal {
 	static int Rightanswarmedium;
 	static int Rightanswarhard;
 	static Scanner input = new Scanner (System.in);
-	static int Exeption;
+	
 	
 	public static void main(String[] args) {
 		System.out.println("Shalom my comrade, welcome to my epic game!");
@@ -23,18 +23,25 @@ public class Tal {
 	
 	public static void Choosedifficulty () {
 		System.out.println("Difficultys :  \b 1(easy) \b 2(medium) \b 3(hard)");
-		while (true){
-			System.out.println("Choose a difficulty from 1-3");
-			Choosedifficulty = Exeption;
-			if ( Choosedifficulty == 1 || Choosedifficulty  == 2 || Choosedifficulty  == 3) {
-				break;
+		while (Choosedifficulty < 1 || Choosedifficulty > 4) {
+            Choosedifficulty = input.nextInt();
+          }
+          switch (Choosedifficulty) {
+            case 1: Choosedifficultyeasy();
+            case 2: Choosedifficultymeadium();
+            
+          }
 			
 	}
 
+		
+		
+		
+		
+		
+		
 	
-		}
-	Random();
-	}
+	
 	
 	
 	 public static int Exception () {
@@ -45,13 +52,18 @@ public class Tal {
 				 return Integer.parseInt(WrongFromUser);
 				 
 			 } catch (Exception e) {
-				 System.out.println("Fel input! Du måste skriva siffror!");
+				 System.out.println("Wrong input! Please enter a number!");
 				 input.hasNext();
 			 }
 		 }
 	 }
 	public static void Choosedifficultyeasy() {
 		if(Choosedifficulty == 1) {
+		int Rightanswareasy = rand.nextInt(50)+1;
+		while(Playerguess != Rightanswareasy) {
+			System.out.println("Please enter a number");
+		
+		int Playerguess = input.nextInt();
 		if(Playerguess < Rightanswareasy) {
 			System.out.println("Number is higher");
 		}
@@ -60,8 +72,10 @@ public class Tal {
 		}
 		else if(Playerguess == Rightanswareasy){
 			System.out.println("You got it my comrade!!");
-			
+			break;
 		}
+		}
+		
 		}
 	}
 	
