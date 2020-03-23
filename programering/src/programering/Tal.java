@@ -19,7 +19,7 @@ public class Tal {
 
 	}
 	/**
-	 * This method shows the player what difficultys the player can choose between:
+	 * This method shows the player what difficulty's the player can choose between:
 	 */
 	public static void Choosedifficulty() {
 		System.out.println("Difficultys :  \n 1(easy) \n 2(medium) \n 3(hard)");
@@ -72,7 +72,7 @@ public class Tal {
 		Result();
 	}
 	/**
-	 * 
+	 * This method is for if the player chooses to play the medium level.
 	 */
 	public static void Choosedifficultymedium() {
 		isdifficultymedium = true;
