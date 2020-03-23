@@ -157,7 +157,9 @@ public class Tal {
 		}
 
 	}
-
+	/**
+	 * This method contains all the other methods so if the player chooses to play again it all runs again.
+	 */
 	public static void Playagain() {
 		Choosedifficulty = 0;
 		Playerguess = 0;
