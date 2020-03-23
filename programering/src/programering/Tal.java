@@ -121,7 +121,9 @@ public class Tal {
 			Noiceanswar = rand.nextInt(100) + 1;
 		}
 	}
-
+	/**
+	 * This method is for when the player guessed the right number or runs out of guesses. Then the player can either choose to play again or exit. 
+	 */
 	public static void Result() {
 		if (Playerguess == Noiceanswar) {
 			System.out.println("You got it my comrade!!");
