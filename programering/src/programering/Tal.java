@@ -2,193 +2,163 @@ package programering;
 
 import java.util.Scanner;
 import java.util.Random;
+
 public class Tal {
 	static Random rand = new Random();
 	static int Choosedifficulty;
 	static int Playerguess;
-	static Scanner input = new Scanner (System.in);
+	static Scanner input = new Scanner(System.in);
 	static int guesses;
 	static int Noiceanswar;
 	static boolean isdifficultymedium = false;
 	static boolean isdifficultyhard = false;
 	static int Playerchoose;
+
 	public static void main(String[] args) {
 		Playagain();
-		
+
 	}
-	
-	
-	
-	public static void Choosedifficulty () {
-		System.out.println("Difficultys :  \b 1(easy) \b 2(medium) \b 3(hard)");
+
+	public static void Choosedifficulty() {
+		System.out.println("Difficultys :  \n 1(easy) \n 2(medium) \n 3(hard)");
 		System.out.println("Please enter a difficulty");
 		while (Choosedifficulty < 1 || Choosedifficulty > 3) {
-            Choosedifficulty = input.nextInt();
-          }
-          switch (Choosedifficulty) {
-            case 1: Choosedifficultyeasy();
-            case 2: Choosedifficultymedium();
-            case 3: Choosedifficultyhard();
-            
-          }
-			
+			Choosedifficulty = Exception();
+		}
+		switch (Choosedifficulty) {
+		case 1:
+			Choosedifficultyeasy();
+		case 2:
+			Choosedifficultymedium();
+		case 3:
+			Choosedifficultyhard();
+
+		}
+
 	}
-	
-	
-	
-	
-	 public static int Exception () {
-		 String WrongFromUser = "";
-		 while (true) {
-			 WrongFromUser = input.nextLine();
-			 try {
-				 return Integer.parseInt(WrongFromUser);
-				 
-			 } catch (Exception e) {
-				 System.out.println("Wrong input! Please enter a number!");
-				 input.hasNext();
-			 }
-		 }
-	 }
+
+	public static int Exception() {
+		int WrongFromUser;
+		while (true) {
+
+			try {
+				WrongFromUser = input.nextInt();
+				break;
+
+			} catch (Exception e) {
+				System.out.println("Wrong input! Please enter a number!");
+				input.next();
+			}
+		}
+		return WrongFromUser;
+	}
+
 	public static void Choosedifficultyeasy() {
-		if(Choosedifficulty == 1) {
-		int Noiceanswar = rand.nextInt(50)+1;
-		while(Playerguess != Noiceanswar) {
-			System.out.println("Please enter a number");
-		
-		int Playerguess = input.nextInt();
-		Hint();
-		
-		 if(Playerguess < Noiceanswar) {
-			System.out.println("Number is higher");
-			System.out.println("You have guessed:" + guesses + "times");
+		if (Choosedifficulty == 1) {
+			while (Playerguess != Noiceanswar) {
+				guesses++;
+				System.out.println("Please enter a number");
+
+				Playerguess = Exception();
+				Hint();
+			}
+			Result();
 		}
-		else if(Playerguess > Noiceanswar) {
-			System.out.println("Number is lower");
-			System.out.println("You have guessed:" + guesses + "times");
-		}
-		else if(Playerguess == Noiceanswar){
-			System.out.println("You got it my comrade!!");
-			break;
-		}
-		}
-		
-		}
+
 	}
-	
+
 	public static void Choosedifficultymedium() {
 		isdifficultymedium = true;
-		if(Choosedifficulty == 2) {
-			int Noiceanswar = rand.nextInt(100)+1;
-			while(Playerguess != Noiceanswar) {
+		if (Choosedifficulty == 2) {
+			while (Playerguess != Noiceanswar) {
 				guesses++;
-				if(guesses == 20) { break;}
+				if (guesses == 20) {
+					break;
+				}
 				System.out.println("Please enter a number");
-			
-			int Playerguess = input.nextInt();
-			Hint();
-			
-			if(isdifficultymedium && guesses > 10) {
-				System.out.println("You have no hints left! noob"); 
-				break;
+
+				Playerguess = Exception();
+				Hint();
+
 			}
-			else if(Playerguess < Noiceanswar) {
-				System.out.println("Number is higher");
-				System.out.println("You have guessed:" + guesses + "times");
-			}
-			else if(Playerguess > Noiceanswar) {
-				System.out.println("Number is lower");
-				System.out.println("You have guessed:" + guesses + "times");
-			}
-			else if(Playerguess == Noiceanswar){
-				System.out.println("You got it my comrade!!");
-				break;
-			}
-		}
+			Result();
 		}
 	}
-	
+
 	public static void Choosedifficultyhard() {
 		isdifficultyhard = true;
-		if(Choosedifficulty == 3) {
-			int Noiceanswar = rand.nextInt(100)+1;
-			while(Playerguess != Noiceanswar) {
+		if (Choosedifficulty == 3) {
+			while (Playerguess != Noiceanswar) {
 				guesses++;
-				if(guesses == 10) { break;}
+				if (guesses == 20) {
+					break;
+				}
 				System.out.println("Please enter a number");
-			
-			int Playerguess = input.nextInt(); 
-			Hint();
-			
-			else if(Playerguess < Noiceanswar) {
-				System.out.println("Number is higher");
-				System.out.println("You have guessed:" + guesses + "times");
+
+				Playerguess = Exception();
+				Hint();
+
 			}
-			else if(Playerguess > Noiceanswar) {
-				System.out.println("Number is lower");
-				System.out.println("You have guessed:" + guesses + "times");
-			}
-			else if(Playerguess == Noiceanswar){
-				System.out.println("You got it my comrade!!");
-				break;
-				
-			}
-			}
+			Result();
 		}
-		
 	}
-	
+
 	public static void Random() {
-		if(Choosedifficulty == 1) {
-			Noiceanswar = rand.nextInt(50)+1;
-		}
-		else if(Choosedifficulty == 2) {
-			Noiceanswar = rand.nextInt(100)+1;
-		}
-		else if(Choosedifficulty == 3) {
-			Noiceanswar = rand.nextInt(100)+1;
+		if (Choosedifficulty == 1) {
+			Noiceanswar = rand.nextInt(50) + 1;
+		} else if (Choosedifficulty == 2) {
+			Noiceanswar = rand.nextInt(100) + 1;
+		} else if (Choosedifficulty == 3) {
+			Noiceanswar = rand.nextInt(100) + 1;
 		}
 	}
-	
+
 	public static void Result() {
-		if(Playerguess == Noiceanswar) {
+		if (Playerguess == Noiceanswar) {
 			System.out.println("You got it my comrade!!");
-		}
-		else if(Playerguess != Noiceanswar) {
+		} else if (Playerguess != Noiceanswar) {
 			System.out.println("You stupid, GAME OVER");
 		}
 		System.out.println("Press 1 if you want to play again else press 2 to exit if you are a pussy");
-		 int Playerchooce = Exception();
-		 if (Playerchooce == 1) {
-			 TalSpelet ();
-		 }
-		 else if (Playerchooce == 2) {
-			 System.exit(0);
-		 }
-		 }
-	
-	
-	public static void Hint() {
-		if(isdifficultymedium && guesses > 10) {
-			System.out.println("You have no hints left! noob");
+
+		if (Playerchoose == 1) {
+			Playagain();
+		} else if (Playerchoose == 2) {
+			System.exit(0);
 		}
-		
-		else if(isdifficultyhard && guesses > 1 ) {
-			System.out.println("You have no hints left! noob");
-		}
-		
 	}
+
+	public static void Hint() {
+		if (isdifficultymedium && guesses > 10) {
+			System.out.println("You have no hints left! noob");
+		}
+
+		else if (isdifficultyhard && guesses > 1) {
+			System.out.println("You have no hints left! noob");
+		} else if (Playerguess < Noiceanswar) {
+			System.out.println("Number is higher");
+			System.out.println("You have guessed:" + guesses + "times");
+		} else if (Playerguess > Noiceanswar) {
+			System.out.println("Number is lower");
+			System.out.println("You have guessed:" + guesses + "times");
+		}
+
+	}
+
 	public static void Playagain() {
+		Choosedifficulty = 0;
+		Playerguess = 0;
+		guesses = 0;
+		Noiceanswar = 0;
+		Playerchoose = 0;
 		System.out.println("Shalom my comrade, welcome to my epic game!");
 		Choosedifficulty();
+		Random();
 		Exception();
 		Choosedifficultyeasy();
 		Choosedifficultymedium();
 		Choosedifficultyhard();
-		Random();
-		Result();
-		Hint();
+		Playagain();
 	}
-	
-		}
-	
+
+}
