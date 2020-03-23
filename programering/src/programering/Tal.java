@@ -18,7 +18,9 @@ public class Tal {
 		Playagain();
 
 	}
-
+	/**
+	 * This method shows the player what difficultys the player can choose between:
+	 */
 	public static void Choosedifficulty() {
 		System.out.println("Difficultys :  \n 1(easy) \n 2(medium) \n 3(hard)");
 		System.out.println("Please enter a difficulty");
@@ -36,7 +38,10 @@ public class Tal {
 		}
 
 	}
-
+	/**
+	 * This method is for if the the player presses a letter instead of a number. 
+	 * @returnIt returns that the input is wrong and asks the player to put in a number instead.
+	 */
 	public static int Exception() {
 		int WrongFromUser;
 		while (true) {
@@ -52,7 +57,9 @@ public class Tal {
 		}
 		return WrongFromUser;
 	}
-
+	/**
+	 * This method is for if the player chooses to play the easy level.
+	 */
 	public static void Choosedifficultyeasy() {
 		Random();
 		while (Playerguess != Noiceanswar) {
@@ -64,7 +71,9 @@ public class Tal {
 		}
 		Result();
 	}
-
+	/**
+	 * 
+	 */
 	public static void Choosedifficultymedium() {
 		isdifficultymedium = true;
 		Random();
