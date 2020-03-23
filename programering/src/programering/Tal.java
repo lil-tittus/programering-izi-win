@@ -109,7 +109,9 @@ public class Tal {
 		}
 		Result();
 	}
-
+	/**
+	 * This method randomizes a new number for every difficulty and every time the player chooses to play again.
+	 */
 	public static void Random() {
 		if (Choosedifficulty == 1) {
 			Noiceanswar = rand.nextInt(50) + 1;
