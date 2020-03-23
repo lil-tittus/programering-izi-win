@@ -54,53 +54,49 @@ public class Tal {
 	}
 
 	public static void Choosedifficultyeasy() {
-		if (Choosedifficulty == 1) {
-			while (Playerguess != Noiceanswar) {
-				guesses++;
-				System.out.println("Please enter a number");
+		Random();
+		while (Playerguess != Noiceanswar) {
+			guesses++;
+			System.out.println("Please enter a number");
 
-				Playerguess = Exception();
-				Hint();
-			}
-			Result();
+			Playerguess = Exception();
+			Hint();
 		}
-
+		Result();
 	}
 
 	public static void Choosedifficultymedium() {
 		isdifficultymedium = true;
-		if (Choosedifficulty == 2) {
-			while (Playerguess != Noiceanswar) {
-				guesses++;
-				if (guesses == 20) {
-					break;
-				}
-				System.out.println("Please enter a number");
-
-				Playerguess = Exception();
-				Hint();
-
+		Random();
+		while (Playerguess != Noiceanswar) {
+			guesses++;
+			if (guesses == 20) {
+				break;
 			}
-			Result();
+			System.out.println("Please enter a number");
+
+			Playerguess = Exception();
+			Hint();
+
 		}
+		Result();
 	}
 
 	public static void Choosedifficultyhard() {
 		isdifficultyhard = true;
-		if (Choosedifficulty == 3) {
-			while (Playerguess != Noiceanswar) {
-				guesses++;
-				if (guesses == 20) {
-					break;
-				}
-				System.out.println("Please enter a number");
-
-				Playerguess = Exception();
-				Hint();
-
+		Random();
+		while (Playerguess != Noiceanswar) {
+			guesses++;
+			if (guesses == 20) {
+				break;
 			}
-			Result();
+			System.out.println("Please enter a number");
+
+			Playerguess = Exception();
+			Hint();
+
 		}
+		Result();
 	}
 
 	public static void Random() {
@@ -120,7 +116,7 @@ public class Tal {
 			System.out.println("You stupid, GAME OVER");
 		}
 		System.out.println("Press 1 if you want to play again else press 2 to exit if you are a pussy");
-
+		Playerchoose = Exception();
 		if (Playerchoose == 1) {
 			Playagain();
 		} else if (Playerchoose == 2) {
@@ -153,12 +149,6 @@ public class Tal {
 		Playerchoose = 0;
 		System.out.println("Shalom my comrade, welcome to my epic game!");
 		Choosedifficulty();
-		Random();
-		Exception();
-		Choosedifficultyeasy();
-		Choosedifficultymedium();
-		Choosedifficultyhard();
-		Playagain();
 	}
 
 }
