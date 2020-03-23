@@ -138,7 +138,9 @@ public class Tal {
 			System.exit(0);
 		}
 	}
-
+	/**
+	 * This method gives the player hints like "number to high" or "number to low"
+	 */
 	public static void Hint() {
 		if (isdifficultymedium && guesses > 10) {
 			System.out.println("You have no hints left! noob");
