@@ -90,7 +90,9 @@ public class Tal {
 		}
 		Result();
 	}
-
+	/**
+	 * This method is for when the player presses the number "3" and chooses to play level hard.
+	 */
 	public static void Choosedifficultyhard() {
 		isdifficultyhard = true;
 		Random();
