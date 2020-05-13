@@ -2,6 +2,7 @@ package programering;
 
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 public class slutprojekt {
 	static Scanner input = new Scanner(System.in);
 	static String playerName;
@@ -10,6 +11,8 @@ public class slutprojekt {
 	static String playerAnswar;
 	static String correctWord;
 	static int guesses;
+	static Random rand = new Random();
+
 	
 	
 	public static void main(String[] args) {
@@ -59,8 +62,26 @@ public class slutprojekt {
 			easy.add("house");
 			easy.add("fire");
 			easy.add("ice");
+		for (int i = 0; i < 1; i++) {
+            correctWord = (easy.get(rand.nextInt(easy.size())));
+		}
+		ArrayList<String> medium = new ArrayList<String>();
+			medium.add("appartment");
+			medium.add("policedepartment");
+			medium.add("extinguishers");
+		for(int i = 0; i < 1; i++) {
+            correctWord = (medium.get(rand.nextInt(medium.size())));
 	}
+		ArrayList<String> hard = new ArrayList<String>();
+			hard.add("i like programing");
+			hard.add("school is very hard");
+			hard.add("i want to comit suicide");
+		for(int i = 0; i < 1; i++) {
+	            correctWord = (hard.get(rand.nextInt(hard.size())));
+			
+		}
 		
+	}
 	}
 	
 
