@@ -7,12 +7,18 @@ public class slutprojekt {
 	static Scanner input = new Scanner(System.in);
 	static String playerName;
 	static int playerMode;
-	static int playerChoose;
+	static int playerChooseMode;
 	static String playerAnswar;
 	static String correctWord;
-	static int guesses;
+	static String guesses;
+	static int playerGuesses;
 	static Random rand = new Random();
-
+	static int playerChooseDifficultie;
+	static String randomWord;
+	public static ArrayList<String> easy = new ArrayList<String>();
+	public static ArrayList<String> medium = new ArrayList<String>();
+	public static ArrayList<String> hard = new ArrayList<String>();
+	
 	
 	
 	public static void main(String[] args) {
@@ -29,10 +35,10 @@ public class slutprojekt {
 	public static void choosePlayerMode() {
 		System.out.println("Modes: \n 1(singelplayer) \n 2(multiplayer)");
 		System.out.println("Please enter a Mode");
-		if(playerChoose == 1) {
+		if(playerChooseMode == 1) {
 			difficultieSingelPlayer();
 		}
-		else if(playerChoose == 2) {
+		else if(playerChooseMode == 2) {
 			multiPlayer();
 		}
 	}
@@ -43,20 +49,45 @@ public class slutprojekt {
 		System.out.println("Hard, This difficultie might contain a sentence or a very complicaded");
 		System.out.println("You will have 10 chanses to guess the right word.");
 		System.out.println("Difficultie: \n 1(Easy) \n 2(Medium) \n 3(Hard)");
+		while (playerChooseDifficultie < 1 || playerChooseDifficultie > 3) {
+			
+		}
+		switch (playerChooseDifficultie) {
+		case 1:
+			singelPlayerMode();
+		case 2:
+			singelPlayerMode();
+		case 3:
+			singelPlayerMode();
+
+		}
 		theGame();
 				
 		}
 		
 	public static void theGame() {
 		while (playerAnswar != correctWord) {
-			if(guesses == 10) {
+			if(playerGuesses == 10) {
 				break;
 			}
 		}
 
 		}
+	
+	public static void singelPlayerMode() {
+		gameList();
+		if(playerChooseDifficultie == 1) {
+			correctWord = (easy.get(rand.nextInt(easy.size())));
+		}
+		else if(playerChooseDifficultie == 2) {
+			correctWord = (medium.get(rand.nextInt(medium.size())));
+		}
+		else if(playerChooseDifficultie == 3) {
+			correctWord = (hard.get(rand.nextInt(hard.size())));
+		}
+	}
 	public static void gameList() {
-		ArrayList<String> easy = new ArrayList<String>();
+		
 			easy.add("apple");
 			easy.add("car");
 			easy.add("house");
@@ -65,14 +96,14 @@ public class slutprojekt {
 		for (int i = 0; i < 1; i++) {
             correctWord = (easy.get(rand.nextInt(easy.size())));
 		}
-		ArrayList<String> medium = new ArrayList<String>();
+		
 			medium.add("appartment");
 			medium.add("policedepartment");
 			medium.add("extinguishers");
 		for(int i = 0; i < 1; i++) {
             correctWord = (medium.get(rand.nextInt(medium.size())));
 	}
-		ArrayList<String> hard = new ArrayList<String>();
+		
 			hard.add("i like programing");
 			hard.add("school is very hard");
 			hard.add("i want to comit suicide");
@@ -82,6 +113,22 @@ public class slutprojekt {
 		}
 		
 	}
+	public static String Word(String guess) {
+		String newRandomWord = "";
+		for (int i = 0; i < correctWord.length(); i++) {
+			char correctWordChar = Character.toUpperCase(correctWord.charAt(i));
+			char guessesChar = Character.toUpperCase(guesses.charAt(0));
+			if (correctWordChar == guessesChar) {
+				newRandomWord += guessesChar;
+			} else if (randomWord.charAt(i) != "_".charAt(0)) {
+				newRandomWord += randomWord.charAt(i);
+			} else {
+				newRandomWord += "_";
+			}
+		}
+		return newRandomWord;
+	}
+
 	}
 	
 
