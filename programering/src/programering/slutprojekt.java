@@ -15,6 +15,7 @@ public class slutprojekt {
 	static Random rand = new Random();
 	static int playerChooseDifficultie;
 	static String randomWord;
+	static int wrongGuesses;
 	public static ArrayList<String> easy = new ArrayList<String>();
 	public static ArrayList<String> medium = new ArrayList<String>();
 	public static ArrayList<String> hard = new ArrayList<String>();
@@ -22,7 +23,7 @@ public class slutprojekt {
 	
 	
 	public static void main(String[] args) {
-		
+		difficultieSingelPlayer();
 	}
 	
 	public static void welcome() {
@@ -38,20 +39,19 @@ public class slutprojekt {
 		if(playerChooseMode == 1) {
 			difficultieSingelPlayer();
 		}
-		else if(playerChooseMode == 2) {
-			multiPlayer();
+		
 		}
-	}
+	
 	public static void difficultieSingelPlayer() {
 		System.out.println("Now you can choose between easy, medium, hard.");
 		System.out.println("Easy, In this difficultie you will be given a random word in the catagory easy. The word will be short and no hard spelling");
 		System.out.println("Medium, In this difficultie the word will be a bit longer or having a harder spelling");
 		System.out.println("Hard, This difficultie might contain a sentence or a very complicaded");
-		System.out.println("You will have 10 chanses to guess the right word.");
+		System.out.println("You will have 8 chanses to guess the right word.");
 		System.out.println("Difficultie: \n 1(Easy) \n 2(Medium) \n 3(Hard)");
-		while (playerChooseDifficultie < 1 || playerChooseDifficultie > 3) {
-			
-		}
+		do  {
+			playerChooseDifficultie = input.nextInt();
+		}while (playerChooseDifficultie < 1 || playerChooseDifficultie > 3);
 		switch (playerChooseDifficultie) {
 		case 1:
 			singelPlayerMode();
@@ -66,8 +66,9 @@ public class slutprojekt {
 		}
 		
 	public static void theGame() {
+		System.out.println(correctWord);
 		while (playerAnswar != correctWord) {
-			if(playerGuesses == 10) {
+			if(playerGuesses == 8) {
 				break;
 			}
 		}
@@ -113,7 +114,7 @@ public class slutprojekt {
 		}
 		
 	}
-	public static String Word(String guess) {
+	public static String Word(String guesses) {
 		String newRandomWord = "";
 		for (int i = 0; i < correctWord.length(); i++) {
 			char correctWordChar = Character.toUpperCase(correctWord.charAt(i));
@@ -127,6 +128,75 @@ public class slutprojekt {
 			}
 		}
 		return newRandomWord;
+	}
+	
+	public static void graphics() {
+		if(wrongGuesses == 1) {
+			System.out.println("=========");
+		}
+		else if(wrongGuesses == 2) {
+			System.out.println("+---+\r\n" + 
+					"  |   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if(wrongGuesses == 3) {
+			System.out.println("+---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if (wrongGuesses == 4) {
+			System.out.println("+---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					"  |   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if (wrongGuesses == 5) {
+			System.out.println("+---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|   |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if (playerGuesses == 6) {
+			System.out.println(" +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					"      |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if (wrongGuesses == 7) {
+			System.out.println(" +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					" /    |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
+		else if (wrongGuesses == 8) {
+			System.out.println(" +---+\r\n" + 
+					"  |   |\r\n" + 
+					"  O   |\r\n" + 
+					" /|\\  |\r\n" + 
+					" / \\  |\r\n" + 
+					"      |\r\n" + 
+					"=========");
+		}
 	}
 
 	}
