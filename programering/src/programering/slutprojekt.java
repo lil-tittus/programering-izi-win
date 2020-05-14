@@ -15,7 +15,7 @@ public class slutprojekt {
 	static Random rand = new Random();
 	static int playerChooseDifficultie;
 	static String randomWord;
-	static int wrongGuesses;
+	static int wrongGuesses = 0;
 	public static ArrayList<String> easy = new ArrayList<String>();
 	public static ArrayList<String> medium = new ArrayList<String>();
 	public static ArrayList<String> hard = new ArrayList<String>();
@@ -23,7 +23,7 @@ public class slutprojekt {
 	
 	
 	public static void main(String[] args) {
-		difficultieSingelPlayer();
+		singelPlayerMode();
 	}
 	
 	public static void welcome() {
@@ -66,14 +66,19 @@ public class slutprojekt {
 		}
 		
 	public static void theGame() {
-		System.out.println(correctWord);
-		while (playerAnswar != correctWord) {
-			if(playerGuesses == 8) {
-				break;
+		guesses = input.nextLine();
+		guesses = guesses.toUpperCase();
+		
+		String newRandomWord = word(guesses);
+		
+		if(randomWord.equals(newRandomWord)) {
+			playerGuesses++;
+			
+		}
 			}
-		}
+		
 
-		}
+		
 	
 	public static void singelPlayerMode() {
 		gameList();
@@ -89,32 +94,32 @@ public class slutprojekt {
 	}
 	public static void gameList() {
 		
-			easy.add("apple");
-			easy.add("car");
-			easy.add("house");
-			easy.add("fire");
-			easy.add("ice");
+			easy.add("APPLE");
+			easy.add("CAR");
+			easy.add("HOUSE");
+			easy.add("FIRE");
+			easy.add("ICE");
 		for (int i = 0; i < 1; i++) {
             correctWord = (easy.get(rand.nextInt(easy.size())));
 		}
 		
-			medium.add("appartment");
-			medium.add("policedepartment");
-			medium.add("extinguishers");
+			medium.add("APPARTMENT");
+			medium.add("POLICEDEPPARTMENT");
+			medium.add("EXTINGUISHERS");
 		for(int i = 0; i < 1; i++) {
             correctWord = (medium.get(rand.nextInt(medium.size())));
 	}
 		
-			hard.add("i like programing");
-			hard.add("school is very hard");
-			hard.add("i want to comit suicide");
+			hard.add("I LIKE PROGRAMING");
+			hard.add("SCHOOL IS VERY HARD");
+			hard.add("I WANT TO COMIT SUICIDE");
 		for(int i = 0; i < 1; i++) {
 	            correctWord = (hard.get(rand.nextInt(hard.size())));
 			
 		}
 		
 	}
-	public static String Word(String guesses) {
+	public static String word(String guesses) {
 		String newRandomWord = "";
 		for (int i = 0; i < correctWord.length(); i++) {
 			char correctWordChar = Character.toUpperCase(correctWord.charAt(i));
