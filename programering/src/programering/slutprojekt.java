@@ -28,7 +28,9 @@ public class slutprojekt {
 	public static void main(String[] args) {
 		playAgain();
 	}
-
+	/**
+	 * Denna metod hälsar spelaren välkommen och visar att hen kan välja att spela ensam eller med andra
+	 */
 	public static void welcome() {
 		System.out.println("Welcome to the Hängagubben spelet. Please enter your name.");
 		playerName = input.nextLine();
@@ -38,7 +40,9 @@ public class slutprojekt {
 				"If you choose multiplayer your friend can choose his own word that you are going to guess on.");
 
 	}
-
+	/**
+	 * Denna metoden låter spelaren välja om hen vill spela ensam eller med andra
+	 */
 	public static void choosePlayerMode() {
 		System.out.println("Modes: \n 1(singelplayer) \n 2(multiplayer)");
 		System.out.println("Please enter a Mode");
@@ -51,7 +55,9 @@ public class slutprojekt {
 		}
 
 	}
-
+	/**
+	 * Om spelaren valde singelPlayer metoden så kommer hen hit där hen kan välja vilken svårighetsgrad som spelaren vill spela på
+	 */
 	public static void difficultieSingelPlayer() {
 		System.out.println("Now you can choose between easy, medium, hard.");
 		System.out.println(
@@ -67,13 +73,19 @@ public class slutprojekt {
 		singelPlayerMode();
 
 	}
-
+	/**
+	 * I denna metoden innehåller welcome och choosePlayerMode eftersom att ingen annan metod kallar på dem
+	 */
 	public static void theGame() {
 		welcome();
 		choosePlayerMode();
 		
 	}
-
+	/**
+	 * Denna metoden jämför spelarens gissning till det randomiserade ordet. Om spelarens gissning är likamed 
+	 * det randomiserade ordet så skickar programmet spelaren till result metoden. Denna metoden håller även 
+	 * räkning på alla gissningar.
+	 */
 	public static void guesses() {
 
 		for (int tries = 0; tries < 8; tries++) {
@@ -93,6 +105,7 @@ public class slutprojekt {
 				int guessesLeft = 8 - wrongGuesses;
 				System.out.println("Wrong guess, you have" + guessesLeft + "guesses left.");
 				graphics();
+				
 			} else {
 
 				System.out.println("Correct guess please continue");
@@ -102,14 +115,20 @@ public class slutprojekt {
 		}
 
 	}
-
+	/**
+	 * Denna metoden är till ifall spelaren valde mutliplayer vid "ChoosePlayerMode". Om spelaren valde 
+	 * multiPlayer skickas hen hit
+	 */
 	public static void multiPlayer() {
 		System.out.println("Please enter a word that your friend is going to guess on");
 		correctWord = input.nextLine();
 		initdisplyWord();
 		guesses();
 	}
-
+	/**
+	 * I denna metoden finns det alla svårighets grader så att om tillexempel spelaren valde att spela på 
+	 * lätt nivå så randomiseras ett ord från den lätta listan.
+	 */
 	public static void singelPlayerMode() {
 
 		if (playerChooseDifficultie == 1) {
@@ -129,7 +148,9 @@ public class slutprojekt {
 			displyWord += "_";
 		}
 	}
-
+	/**
+	 * Denna metoden innehåller alla listor för singelplayer 
+	 */
 	public static void gameList() {
 
 		easy.add("APPLE");
@@ -140,11 +161,11 @@ public class slutprojekt {
 
 		medium.add("APPARTMENT");
 		medium.add("POLICEDEPPARTMENT");
-		medium.add("EXTINGUISHERS");
+		medium.add("INTELLIGENCE");
 
-		hard.add("I LIKE PROGRAMING");
-		hard.add("SCHOOL IS VERY HARD");
-		hard.add("I WANT TO COMIT SUICIDE");
+		hard.add("PSYCHOPHYSICOTHERAPEUTICS");
+		hard.add("EXTINGUISHERS");
+		hard.add("OTORHINOLARYNGOLOGIST");
 
 	}
 
@@ -159,7 +180,10 @@ public class slutprojekt {
 		displyWord = new String(displyWordArray);
 
 	}
-
+	/**
+	 * Denna metoden innehåller alla "målningar" som ska printas ut när spelaren gissat fel som tillslut kommer 
+	 * att bilda en hängdgubbe.
+	 */
 	public static void graphics() {
 		if (wrongGuesses == 1) {
 			System.out.println("=========");
@@ -186,6 +210,9 @@ public class slutprojekt {
 					+ "      |\r\n" + "=========");
 		}
 	}
+	/**
+	 * När spelaren kommit fram till rätt ord eller 
+	 */
 	public static void result() {
 		System.out.println("Now you are done, press 1 to play again and 2 to exit");
 		playerAnswar = input.nextInt();
