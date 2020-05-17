@@ -262,7 +262,11 @@ public class slutprojekt {
 		theGame();
 
 	}
-
+	/**
+	 * Denna metod ser till att där spelaren ska skriva in ett nummer men skriver in en bokstav istället så
+	 * krashar inte programmet
+	 * @return Att inputen är fel och ber spelaren skriva en bokstav
+	 */
 	public static int exception() {
 		int wrongFromUser;
 		while (true) {
