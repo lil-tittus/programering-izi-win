@@ -133,6 +133,7 @@ public class slutprojekt {
 	public static void multiPlayer() {
 		System.out.println("Please enter a word that your friend is going to guess on");
 		correctWord = input.nextLine();
+		correctWord = correctWord.toUpperCase();
 		initdisplyWord();
 		guesses();
 	}
@@ -154,9 +155,10 @@ public class slutprojekt {
 		initdisplyWord();
 		guesses();
 	}
+
 	/**
-	 * Denna metoden med hjälp av word metoden byter ut ordet till "_" tills spelaren har gissat en bokstav 
-	 * som ordet innehåller.
+	 * Denna metoden med hjälp av word metoden byter ut ordet till "_" tills
+	 * spelaren har gissat en bokstav som ordet innehåller.
 	 */
 	private static void initdisplyWord() {
 		displyWord = "";
@@ -185,8 +187,10 @@ public class slutprojekt {
 		hard.add("OTORHINOLARYNGOLOGIST");
 
 	}
+
 	/**
 	 * Se java doc för initdisplyWord
+	 * 
 	 * @param guesses Det är bokstaven spelaren gissat på
 	 */
 	public static void word(String guesses) {
