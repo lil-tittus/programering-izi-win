@@ -32,7 +32,7 @@ public class slutprojekt {
 	public static void welcome() {
 		System.out.println("Welcome to the Hängagubben spelet. Please enter your name.");
 		playerName = input.nextLine();
-		System.out.println("Hello" + playerName
+		System.out.println("Hello " + playerName
 				+ ", In this game you can choose to play singel player or multieplayer, If play singel you can choose between 3 diffeculties, easy, medium and hard.");
 		System.out.println(
 				"If you choose multiplayer your friend can choose his own word that you are going to guess on.");
@@ -104,7 +104,9 @@ public class slutprojekt {
 	}
 
 	public static void multiPlayer() {
+		System.out.println("Please enter a word that your friend is going to guess on");
 		correctWord = input.nextLine();
+		initdisplyWord();
 		guesses();
 	}
 
