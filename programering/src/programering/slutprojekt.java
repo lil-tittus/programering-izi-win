@@ -49,7 +49,7 @@ public class slutprojekt {
 	public static void choosePlayerMode() {
 		System.out.println("Modes: \n 1(singelplayer) \n 2(multiplayer)");
 		System.out.println("Please enter a Mode");
-		playerChooseMode = input.nextInt();
+		playerChooseMode = exception();
 		input.nextLine();
 		if (playerChooseMode == 1) {
 			difficultieSingelPlayer();
@@ -72,7 +72,7 @@ public class slutprojekt {
 		System.out.println("You will have 8 chanses to guess the right word.");
 		System.out.println("Difficultie: \n 1(Easy) \n 2(Medium) \n 3(Hard)");
 		do {
-			playerChooseDifficultie = input.nextInt();
+			playerChooseDifficultie = exception();
 			input.nextLine();
 		} while (playerChooseDifficultie < 1 || playerChooseDifficultie > 3);
 		singelPlayerMode();
@@ -244,7 +244,7 @@ public class slutprojekt {
 		System.out.println("The correct word was: " + correctWord);
 		System.out.println("You guessed: " + displyWord);
 		System.out.println("Now you are done, press 1 to play again and 2 to exit");
-		playerAnswar = input.nextInt();
+		playerAnswar = exception();
 		if (playerAnswar == 1) {
 			playAgain();
 		} else if (playerAnswar == 2) {
@@ -261,6 +261,22 @@ public class slutprojekt {
 		gameList();
 		theGame();
 
+	}
+
+	public static int exception() {
+		int wrongFromUser;
+		while (true) {
+
+			try {
+				wrongFromUser = input.nextInt();
+				break;
+
+			} catch (Exception e) {
+				System.out.println("Wrong input! Please enter a number!");
+				input.next();
+			}
+		}
+		return wrongFromUser;
 	}
 
 }
