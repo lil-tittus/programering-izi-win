@@ -211,7 +211,8 @@ public class slutprojekt {
 		}
 	}
 	/**
-	 * När spelaren kommit fram till rätt ord eller 
+	 * När spelaren kommit fram till rätt ord eller inte kommer hen hit där spelat kommer att ge hen ett val 
+	 * som att spela igen eller avsluta.
 	 */
 	public static void result() {
 		System.out.println("Now you are done, press 1 to play again and 2 to exit");
@@ -223,6 +224,10 @@ public class slutprojekt {
 			System.exit(0);
 		}
 	}
+	/**
+	 * Denna innehåller listan med orden och metoden där welcome och den metoden där man kunde välja
+	 * vilket mode man ville spela i. Detta behövdes så att inte spelat krashade.
+	 */
 	public static void playAgain() {
 		gameList();
 		theGame();
